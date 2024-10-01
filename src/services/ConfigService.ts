@@ -16,6 +16,8 @@ export default class ConfigService {
         main: {
           interval: "5m",
           prefix: "",
+          appendDockerId: false,
+          publishUpdates: true,
         },
         mqtt: {
           connectionUri: "mqtt://localhost:1883",
