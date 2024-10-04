@@ -141,7 +141,7 @@ export default class HomeassistantService {
       topic = `homeassistant/button/${topicName}/docker_manual_update/config`;
       payload = {
         name: "Manual Update",
-        unique_id: (prefix ? `${prefix}/${image}` : `${image}`)+(dockerId ? `_${dockerId}` : ``)+`_manual_update`,
+        unique_id: (prefix ? `${prefix}/` : ``)+(appendDockerId ? `${dockerId}_` : ``)+`${image}_manual_update`,
         command_topic: `${config.mqtt.topic}/manualUpdate`,
         command_template: JSON.stringify({ containerId: container.Id }),
         availability: {
@@ -165,7 +165,7 @@ export default class HomeassistantService {
       topic = `homeassistant/button/${topicName}/docker_manual_restart/config`;
       payload = {
         name: "Manual Restart",
-        unique_id: (prefix ? `${prefix}/${image}` : `${image}`)+(dockerId ? `_${dockerId}` : ``)+`_manual_restart`,
+        unique_id: (prefix ? `${prefix}/` : ``)+(appendDockerId ? `${dockerId}_` : ``)+`${image}_manual_restart`,
         command_topic: `${config.mqtt.topic}/restart`,
         command_template: JSON.stringify({ containerId: container.Id }),
         availability: {
@@ -275,9 +275,9 @@ export default class HomeassistantService {
     const formatedImage = image.replace(/[\/.:;,+*?@^$%#!&"'`|<>{}\[\]()-\s\u0000-\u001F\u007F]/g, "_");
 
     return {
-      object_id: (prefix ? `${prefix}/${image} ${name}` : `${image} ${name}`)+(dockerId ? `_${dockerId}` : ``),
+      object_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}` : `${image} ${name}`),
       name: `${name}`,
-      unique_id: (prefix ? `${prefix}/${image} ${name}` : `${image} ${name}`)+(dockerId ? `_${dockerId}` : ``),
+      unique_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}` : `${image} ${name}`),
       state_topic: `${config.mqtt.topic}/${formatedImage}`,
       device_class: deviceClass,
       value_template: `{{ value_json.${valueName} }}`,
@@ -313,9 +313,9 @@ export default class HomeassistantService {
     const formatedImage = image.replace(/[\/.:;,+*?@^$%#!&"'`|<>{}\[\]()-\s\u0000-\u001F\u007F]/g, "_");
 
     return {
-      object_id: (prefix ? `${prefix}/${image} ${name}` : `${image} ${name}`)+(dockerId ? `_${dockerId}` : ``),
+      object_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}` : `${image} ${name}`),
       name: `${name}`,
-      unique_id: (prefix ? `${prefix}/${image} ${name}` : `${image} ${name}`)+(dockerId ? `_${dockerId}` : ``),
+      unique_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}` : `${image} ${name}`),
       state_topic: `${config.mqtt.topic}/${formatedImage}/update`,
       device_class: "firmware",
       availability: [
@@ -355,9 +355,9 @@ export default class HomeassistantService {
     const formatedImage = image.replace(/[\/.:;,+*?@^$%#!&"'`|<>{}\[\]()-\s\u0000-\u001F\u007F]/g, "_");
 
     return {
-      object_id: (prefix ? `${prefix}/${image} ${name}` : `${image} ${name}`)+(dockerId ? `_${dockerId}` : ``),
+      object_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}` : `${image} ${name}`),
       name: `${name}`,
-      unique_id: (prefix ? `${prefix}/${image} ${name}` : `${image} ${name}`)+(dockerId ? `_${dockerId}` : ``),
+      unique_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}` : `${image} ${name}`),
       state_topic: `${config.mqtt.topic}/${formatedImage}/stats`,
       device_class: deviceClass,
       value_template: `{{ value_json.${valueName} }}`,
