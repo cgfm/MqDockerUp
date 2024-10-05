@@ -64,12 +64,14 @@ const checkAndPublishUpdates = async (): Promise<void> => {
 
   logger.info("Finished checking for image updates");
   logger.info(`Next check in ${TimeService.formatDuration(TimeService.parseDuration(config.main.interval))}`);
+  logger.debug(`Next stats check in ${TimeService.formatDuration(TimeService.parseDuration(config.main.statsInterval))}`);
 };
 
 
 // Check for new/old containers and publish updates
 const checkAndPublishStats = async (): Promise<void> => {
   await HomeassistantService.publishStats(client);
+  logger.debug(`Next stats check in ${TimeService.formatDuration(TimeService.parseDuration(config.main.statsInterval))}`);
 };
 
 let intervalId: NodeJS.Timeout;
