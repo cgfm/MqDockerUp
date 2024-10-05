@@ -6,7 +6,7 @@ main:
   interval: "5m"
   prefix: ""
   statsInterval: "5s"
-  appendDockerId: false
+  appendContainerName: false
   publishUpdates: true
 
 # MQTT configuration

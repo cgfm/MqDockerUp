@@ -17,7 +17,7 @@ export default class ConfigService {
           interval: "5m",
           statsInterval: "5m",
           prefix: "",
-          appendDockerId: false,
+          appendContainerName: false,
           publishUpdates: true,
         },
         mqtt: {
