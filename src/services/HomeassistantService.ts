@@ -275,9 +275,9 @@ export default class HomeassistantService {
     const formatedImage = image.replace(/[\/.:;,+*?@^$%#!&"'`|<>{}\[\]()-\s\u0000-\u001F\u007F]/g, "_");
 
     return {
-      object_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}` : `${image} ${name}`),
+      object_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}`,
       name: `${name}`,
-      unique_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}` : `${image} ${name}`),
+      unique_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}`,
       state_topic: `${config.mqtt.topic}/${formatedImage}`,
       device_class: deviceClass,
       value_template: `{{ value_json.${valueName} }}`,
@@ -313,9 +313,9 @@ export default class HomeassistantService {
     const formatedImage = image.replace(/[\/.:;,+*?@^$%#!&"'`|<>{}\[\]()-\s\u0000-\u001F\u007F]/g, "_");
 
     return {
-      object_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}` : `${image} ${name}`),
+      object_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}`,
       name: `${name}`,
-      unique_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}` : `${image} ${name}`),
+      unique_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}`,
       state_topic: `${config.mqtt.topic}/${formatedImage}/update`,
       device_class: "firmware",
       availability: [
@@ -355,9 +355,9 @@ export default class HomeassistantService {
     const formatedImage = image.replace(/[\/.:;,+*?@^$%#!&"'`|<>{}\[\]()-\s\u0000-\u001F\u007F]/g, "_");
 
     return {
-      object_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}` : `${image} ${name}`),
+      object_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}`,
       name: `${name}`,
-      unique_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}` : `${image} ${name}`),
+      unique_id: (prefix ? `${prefix}/` : ``)+(dockerId ? `${dockerId}_` : ``)+`${image} ${name}`,
       state_topic: `${config.mqtt.topic}/${formatedImage}/stats`,
       device_class: deviceClass,
       value_template: `{{ value_json.${valueName} }}`,
