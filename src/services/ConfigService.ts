@@ -15,6 +15,7 @@ export default class ConfigService {
       const defaults = {
         main: {
           interval: "5m",
+          statsInterval: "5m",
           prefix: "",
           appendDockerId: false,
           publishUpdates: true,
