@@ -55,9 +55,9 @@ export default class HomeassistantService {
       let deviceName = containerName;
 
       if (!prefix) {
-        topicName = (appendContainerName ? `_${containerName}` : `_`)+`${formatedImage}_${formatedTag}_${containerName}`;
+        topicName = (appendContainerName ? `_${containerName}` : `_`)+`${formatedImage}_${formatedTag}`;
       } else {
-        topicName = `${prefix}`+(appendContainerName ? `_${containerName}` : `_`)+`${formatedImage}_${formatedTag}_${containerName}`;
+        topicName = `${prefix}`+(appendContainerName ? `_${containerName}` : `_`)+`${formatedImage}_${formatedTag}`;
       }
 
       if (!prefix) {
